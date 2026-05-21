@@ -1,0 +1,34 @@
+# Web Interface
+streamlit
+streamlit-extras
+streamlit-option-menu
+streamlit-authenticator
+
+# LangChain Framework & Core Ecosystem
+langchain
+langchain-core
+langchain-community
+langchain-text-splitters
+
+# LangChain Model Partnerships
+langchain-google-genai
+langchain-qdrant
+langchain-huggingface
+
+# Databases & APIs
+qdrant-client
+youtube-transcript-api
+google-generativeai
+
+# AI/ML, Embeddings, and Reranking Frameworks
+torch
+transformers
+accelerate
+sentence-transformers
+huggingface-hub
+FlagEmbedding
+rank-bm25
+faiss-cpu
+
+# Environment Utilities
+python-dotenv
