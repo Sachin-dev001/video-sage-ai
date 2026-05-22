@@ -1,27 +1,30 @@
-streamlit
-python-dotenv
+streamlit==1.45.1
 
-langchain
-langchain-core
-langchain-community
-langchain-text-splitters
+langchain==0.3.25
+langchain-core==0.3.59
+langchain-community==0.3.24
+langchain-text-splitters==0.3.8
 
-langchain-google-genai
-langchain-qdrant
-langchain-huggingface
+langchain-google-genai==2.1.4
+langchain-qdrant==0.2.0
+langchain-huggingface==0.1.2
 
-google-generativeai
+qdrant-client==1.9.1
 
-qdrant-client
+sentence-transformers==2.7.0
+transformers==4.41.2
+huggingface-hub==0.31.2
 
-sentence-transformers
-transformers
-huggingface-hub
+FlagEmbedding==1.2.10
 
-youtube-transcript-api
+youtube-transcript-api==1.0.3
 
-FlagEmbedding
+google-generativeai==0.8.5
 
-rank-bm25
+python-dotenv==1.1.0
 
-numpy
+numpy==1.26.4
+pyarrow==15.0.2
+datasets==2.19.1
+
+torch==2.2.2
