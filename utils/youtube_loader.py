@@ -27,9 +27,30 @@ def get_transcript_documents(youtube_url):
 
     video_id = extract_video_id(youtube_url)
 
-    ytt_api = YouTubeTranscriptApi()
+    transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
 
-    transcript = ytt_api.fetch(video_id)
+    # TRY ENGLISH MANUAL TRANSCRIPT
+    try:
+
+        transcript = transcript_list.find_manually_created_transcript(
+            ["en"]
+        )
+
+    # FALLBACK TO AUTO GENERATED
+    except:
+
+        try:
+
+            transcript = transcript_list.find_generated_transcript(
+                ["en", "hi"]
+            )
+
+        # FALLBACK TO ANY AVAILABLE LANGUAGE
+        except:
+
+            transcript = next(iter(transcript_list))
+
+    fetched_transcript = transcript.fetch()
 
     docs = []
 
@@ -37,7 +58,7 @@ def get_transcript_documents(youtube_url):
 
     window_start = 0
 
-    for item in transcript:
+    for item in fetched_transcript:
 
         start = int(item.start)
 
