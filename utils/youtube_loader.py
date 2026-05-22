@@ -27,16 +27,19 @@ def get_transcript_documents(youtube_url):
 
     video_id = extract_video_id(youtube_url)
 
-    transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
+    ytt_api = YouTubeTranscriptApi()
 
-    # TRY ENGLISH MANUAL TRANSCRIPT
+    # GET ALL AVAILABLE TRANSCRIPTS
+    transcript_list = ytt_api.list(video_id)
+
+    # TRY MANUAL ENGLISH
     try:
 
         transcript = transcript_list.find_manually_created_transcript(
             ["en"]
         )
 
-    # FALLBACK TO AUTO GENERATED
+    # FALLBACK TO GENERATED ENGLISH / HINDI
     except:
 
         try:
@@ -45,11 +48,12 @@ def get_transcript_documents(youtube_url):
                 ["en", "hi"]
             )
 
-        # FALLBACK TO ANY AVAILABLE LANGUAGE
+        # FALLBACK TO ANY AVAILABLE TRANSCRIPT
         except:
 
             transcript = next(iter(transcript_list))
 
+    # FETCH TRANSCRIPT
     fetched_transcript = transcript.fetch()
 
     docs = []
@@ -60,11 +64,16 @@ def get_transcript_documents(youtube_url):
 
     for item in fetched_transcript:
 
-        start = int(item.start)
+        # SUPPORT BOTH OBJECT + DICT FORMATS
+        try:
+            start = int(item.start)
+            text = item.text
 
-        text = item.text
+        except:
+            start = int(item["start"])
+            text = item["text"]
 
-        # NEW 10-SECOND WINDOW
+        # CREATE NEW 10 SECOND WINDOW
         if start >= window_start + 10:
 
             docs.append(
@@ -82,7 +91,7 @@ def get_transcript_documents(youtube_url):
 
         current_text.append(text)
 
-    # LAST CHUNK
+    # FINAL CHUNK
     if current_text:
 
         docs.append(
