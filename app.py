@@ -112,9 +112,9 @@ st.markdown("""
 <div class="upload-section">
 
 <div class="upload-title">
-📺 Analyze Any YouTube Video
+<div class="hero-icon">🎥</div>
+Analyze Any YouTube Video
 </div>
-
 <div class="upload-subtitle">
 Paste a YouTube link to generate AI-powered summaries, timestamp insights, semantic search, and conversational analysis.
 </div>
