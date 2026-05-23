@@ -10,12 +10,27 @@ GLOBAL
     box-sizing:border-box;
 }
 
-html, body, [class*="css"]{
+html,
+body,
+[class*="css"]{
     font-family:'Inter',sans-serif;
     color:white;
 }
 
+/* FORCE DARK MODE */
+
+html{
+    color-scheme:dark !important;
+}
+
+body{
+    background:#020617 !important;
+}
+
+/* MAIN APP */
+
 .stApp{
+
     background:
         radial-gradient(circle at top left,#1e1b4b 0%,transparent 30%),
         radial-gradient(circle at bottom right,#0f172a 0%,transparent 30%),
@@ -24,15 +39,38 @@ html, body, [class*="css"]{
     min-height:100vh;
 }
 
+/* REMOVE STREAMLIT WHITE AREAS */
+
+[data-testid="stAppViewContainer"]{
+    background:transparent !important;
+}
+
+[data-testid="stHeader"]{
+    background:rgba(0,0,0,0) !important;
+}
+
+header{
+    background:transparent !important;
+}
+
+footer{
+    display:none !important;
+}
+
 /* =====================================================
 MAIN CONTAINER
 ===================================================== */
 
 .main .block-container{
+
     max-width:1250px;
-    padding-top:1.5rem;
+
+    padding-top:2rem;
+
     padding-bottom:2rem;
+
     padding-left:2rem;
+
     padding-right:2rem;
 }
 
@@ -41,8 +79,11 @@ SIDEBAR
 ===================================================== */
 
 section[data-testid="stSidebar"]{
-    background:rgba(5,10,25,0.92);
+
+    background:rgba(5,10,25,0.96);
+
     border-right:1px solid rgba(255,255,255,0.06);
+
     backdrop-filter:blur(18px);
 }
 
@@ -50,20 +91,8 @@ section[data-testid="stSidebar"] .block-container{
     padding-top:2rem;
 }
 
-section[data-testid="stSidebar"] h1{
-    font-size:2rem;
-    font-weight:800;
-}
-
-section[data-testid="stSidebar"] h3{
-    margin-top:1rem;
-    font-size:1.05rem;
-}
-
-section[data-testid="stSidebar"] p,
-section[data-testid="stSidebar"] li{
-    color:#cbd5e1;
-    line-height:1.8;
+section[data-testid="stSidebar"] *{
+    color:white !important;
 }
 
 /* =====================================================
@@ -71,6 +100,7 @@ TOP HERO
 ===================================================== */
 
 .upload-section{
+
     position:relative;
 
     padding:4rem 3rem;
@@ -80,8 +110,8 @@ TOP HERO
     background:
         linear-gradient(
             145deg,
-            rgba(30,41,59,0.85),
-            rgba(15,23,42,0.75)
+            rgba(30,41,59,0.88),
+            rgba(15,23,42,0.82)
         );
 
     border:1px solid rgba(255,255,255,0.08);
@@ -91,52 +121,63 @@ TOP HERO
     backdrop-filter:blur(22px);
 
     box-shadow:
-        0 10px 40px rgba(0,0,0,0.4),
+        0 10px 40px rgba(0,0,0,0.45),
         inset 0 1px 0 rgba(255,255,255,0.05);
 
     margin-bottom:2rem;
 }
 
 .upload-section::before{
+
     content:"";
 
     position:absolute;
 
-    width:400px;
-    height:400px;
+    width:420px;
+    height:420px;
 
-    background:radial-gradient(
-        circle,
-        rgba(139,92,246,0.22),
-        transparent 70%
-    );
+    background:
+        radial-gradient(
+            circle,
+            rgba(139,92,246,0.22),
+            transparent 70%
+        );
 
     top:-120px;
     right:-120px;
 }
 
+/* TITLE */
+
 .upload-title{
-    font-size:3.2rem;
+
+    font-size:3.3rem;
+
     font-weight:800;
 
-    line-height:1.1;
+    line-height:1.2;
 
     margin-bottom:1rem;
 
     text-align:center;
 
-    background:linear-gradient(
-        90deg,
-        #ffffff,
-        #c4b5fd,
-        #67e8f9
-    );
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #c4b5fd,
+            #67e8f9
+        );
 
     -webkit-background-clip:text;
+
     -webkit-text-fill-color:transparent;
 }
 
+/* SUBTITLE */
+
 .upload-subtitle{
+
     max-width:850px;
 
     margin:auto;
@@ -155,45 +196,63 @@ INPUT
 ===================================================== */
 
 .stTextInput{
-    margin-top:1.8rem;
+    margin-top:2rem;
 }
 
-.stTextInput input{
+/* INPUT CONTAINER */
+
+.stTextInput > div > div{
 
     background:rgba(15,23,42,0.92) !important;
 
+    border-radius:18px !important;
+
     border:1px solid rgba(255,255,255,0.08) !important;
+
+    overflow:hidden;
+}
+
+/* INPUT FIELD */
+
+.stTextInput input{
+
+    background:transparent !important;
+
+    border:none !important;
 
     color:white !important;
 
-    border-radius:18px !important;
+    padding:1rem 1.2rem !important;
 
-    padding:1.2rem 1.4rem !important;
-
-    height:4rem;
+    height:4rem !important;
 
     font-size:1rem !important;
 
-    transition:all 0.3s ease;
+    box-shadow:none !important;
 }
+
+/* INPUT FOCUS */
 
 .stTextInput input:focus{
 
-    border:1px solid #8b5cf6 !important;
+    border:none !important;
 
-    box-shadow:
-        0 0 0 4px rgba(139,92,246,0.15) !important;
-
-    background:rgba(17,24,39,1) !important;
+    box-shadow:none !important;
 }
 
 /* =====================================================
 BUTTON
 ===================================================== */
 
+div.stButton{
+    margin-top:1.8rem;
+}
+
 .stButton button{
 
-    height:3.5rem !important;
+    width:100% !important;
+
+    height:4rem !important;
 
     border:none !important;
 
@@ -215,18 +274,41 @@ BUTTON
 
     transition:all 0.3s ease !important;
 
+    display:flex !important;
+
+    align-items:center !important;
+
+    justify-content:center !important;
+
     box-shadow:
         0 10px 25px rgba(124,58,237,0.35);
 }
 
 .stButton button:hover{
 
-    transform:translateY(-3px);
+    transform:translateY(-2px);
 
     box-shadow:
         0 15px 35px rgba(124,58,237,0.45);
+}
 
-    opacity:0.96;
+/* =====================================================
+FEATURE PILLS
+===================================================== */
+
+.feature-pill{
+
+    padding:12px 20px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,0.05);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    color:#e2e8f0;
+
+    font-weight:500;
 }
 
 /* =====================================================
@@ -254,7 +336,11 @@ CHAT CONTAINER
 
     box-shadow:
         0 10px 35px rgba(0,0,0,0.35);
+
+    margin-bottom:6rem;
 }
+
+/* HEADING */
 
 .chat-heading{
 
@@ -289,12 +375,10 @@ CHAT MESSAGE
     margin-bottom:1rem;
 
     backdrop-filter:blur(12px);
-
-    transition:0.3s ease;
 }
 
-[data-testid="stChatMessage"]:hover{
-    transform:translateY(-2px);
+[data-testid="stChatMessage"] *{
+    color:white !important;
 }
 
 /* =====================================================
@@ -302,8 +386,13 @@ CHAT INPUT
 ===================================================== */
 
 [data-testid="stChatInput"]{
-    margin-top:1rem;
+
+    background:transparent !important;
+
+    padding-top:1rem !important;
 }
+
+/* CHAT INPUT BOX */
 
 [data-testid="stChatInput"] textarea{
 
@@ -316,10 +405,21 @@ CHAT INPUT
     color:white !important;
 
     padding:1rem !important;
+
+    min-height:58px !important;
+}
+
+/* SEND BUTTON */
+
+[data-testid="stChatInput"] button{
+
+    background:transparent !important;
+
+    border:none !important;
 }
 
 /* =====================================================
-INFO/WARNING BOXES
+ALERTS
 ===================================================== */
 
 .stAlert{
@@ -359,7 +459,7 @@ RESPONSIVE
 @media(max-width:900px){
 
     .upload-title{
-        font-size:2.2rem;
+        font-size:2.3rem;
     }
 
     .upload-section{

@@ -1,0 +1,17 @@
+[33mf75d457[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m Updated VideoSage AI app
+[33m11e9136[m fixed youtube loader
+[33m2797b72[m fixed youtube loader
+[33mc094842[m Moved to Whisper transcription
+[33m292fc05[m fixed multilingual transcript loader
+[33m70171be[m added multilingual transcript fallback
+[33m1bbf7c8[m fixed deployment dependencies
+[33md5ec9e3[m fixed deployment dependencies
+[33ma6236e4[m fixed deployment dependencies
+[33maca9a7d[m fixed deployment dependencies
+[33ma4f52b5[m fixed deployment dependencies
+[33md0d617c[m Added Python 3.12 runtime
+[33m6e44f37[m Fixed requirements
+[33m62f2042[m Fixed requirements
+[33mbb086c8[m Merge branch 'main' of https://github.com/Sachin-dev001/video-sage-ai
+[33m56ccc26[m Initial commit
+[33mccbd8a4[m Initial commit
