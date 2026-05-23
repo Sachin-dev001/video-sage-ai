@@ -107,17 +107,16 @@ AI Engineer focused on retrieval systems, LLM applications, and real-time AI exp
 # VIDEO INPUT SECTION
 # =========================================
 
-
 st.markdown("""
 <div class="upload-section">
 
-<div class="upload-title">
-<div class="hero-icon">🎥</div>
+<h1 class="main-title">
 Analyze Any YouTube Video
-</div>
-<div class="upload-subtitle">
+</h1>
+
+<p class="main-subtitle">
 Paste a YouTube link to generate AI-powered summaries, timestamp insights, semantic search, and conversational analysis.
-</div>
+</p>
 
 </div>
 """, unsafe_allow_html=True)

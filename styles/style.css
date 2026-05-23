@@ -475,10 +475,34 @@ RESPONSIVE
         padding-right:1rem;
     }
 }
-.hero-icon{
-    font-size:64px;
-    margin-bottom:10px;
+.main-title{
+    text-align:center;
+    font-size:4rem;
+    font-weight:800;
+    line-height:1.1;
+
+    background:linear-gradient(
+        90deg,
+        #ffffff,
+        #c4b5fd,
+        #7dd3fc
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    margin-bottom:1rem;
 }
+
+.main-subtitle{
+    text-align:center;
+    font-size:1.15rem;
+    color:#cbd5e1;
+    max-width:900px;
+    margin:auto;
+    line-height:1.8;
+}
+
 /* REMOVE WHITE INPUT BORDER */
 
 .stTextInput > div > div{
