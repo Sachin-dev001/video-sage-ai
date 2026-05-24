@@ -44,6 +44,25 @@ Chat with YouTube videos using **RAG**, **LLMs**, **Semantic Search**, and **Tim
 
 ---
 
+# 📸 Project Preview
+
+## 🏠 Homepage
+
+<img width="100%" alt="homepage" src="assets/Homepage.png">
+
+---
+
+## AI Chat
+
+<img width="100%" src="assets/chat.png">
+<img width="100%" src="assets/chat2.png">
+
+
+---
+
+## Processing Pipeline
+
+<img width="100%" src="assets/processing.png">
 # ⚙️ Installation
 
 ## 1️⃣ Clone Repository
